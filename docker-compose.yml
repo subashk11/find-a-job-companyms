@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot-app
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb+srv://subash4634:d5irfayvZt7ubwR5@cluster0.4z4xi.mongodb.net/jobs_search
+    networks:
+      - app-network
+
+networks:
+  app-network:
